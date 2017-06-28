@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>William Pierce</title>
+<link rel="stylesheet" href="css/animate.css">
+
+<style>
+body, html, form {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.center{
+  text-align: center;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("photos/grand.JPG");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("photos/img_parallax2.jpg");
+  min-height: 300px;
+}
+
+.bgimg-3 {
+  background-image: url("photos/img_parallax3.jpg");
+  min-height: 300px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  /*opacity: 0.5;*/
+  opacity: 0.9;
+  filter: alpha(opacity=40);
+}
+
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 40px;
+  font-size: 35px;
+  letter-spacing: 5px;
+  width: 100%;
+  font-weight: bold;
+  /*opacity: 0.5;*/
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline li {
+  display: table-cell;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+.social-icons .fa {
+  font-size: 1.8em;
+}
+
+.social-icons .fa {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons.icon-circle .fa {
+  border-radius: 50%;
+}
+
+.social-icons.icon-rounded .fa {
+  border-radius: 5px;
+}
+
+.social-icons.icon-flat .fa {
+  border-radius: 0;
+}
+
+.social-icons .fa:hover,
+.social-icons .fa:active {
+  color: #FFF;
+  -webkit-box-shadow: 1px 1px 3px #333;
+  -moz-box-shadow: 1px 1px 3px #333;
+  box-shadow: 1px 1px 3px #333;
+}
+
+.social-icons.icon-zoom .fa:hover,
+.social-icons.icon-zoom .fa:active {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.social-icons.icon-rotate .fa:hover,
+.social-icons.icon-rotate .fa:active {
+  -webkit-transform: scale(1.1) rotate(360deg);
+  -moz-transform: scale(1.1) rotate(360deg);
+  -ms-transform: scale(1.1) rotate(360deg);
+  -o-transform: scale(1.1) rotate(360deg);
+  transform: scale(1.1) rotate(360deg);
+}
+
+.social-icons .fa-facebook,
+.social-icons .fa-facebook-square {
+  background-color: #3C599F;
+}
+.view {
+    width: 300px;
+    height: 200px;
+    /*margin: 10px;*/
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    background: #fff url(../images/bgimg.jpg) no-repeat center center
+}
+.view .mask, .view .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.view img {
+    /*display: block;*/
+    /*position: relative;*/
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%
+}
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0;
+}
+.view p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 5px 10px 10px;
+    text-align: center;
+}
+.view a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000;
+}
+.view a.info:hover {
+    box-shadow: 0 0 5px #000;
+}
+.view-first img { 
+    transition: all 0.2s linear;
+}
+.view-first .mask {
+    opacity: 0;
+    background-color: rgba(107, 110, 114, 0.7); 
+    transition: all 0.4s ease-in-out;
+}
+.view-first h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.view-first p { 
+    transform: translateY(100px);
+    opacity: 0;
+  transition: all 0.2s linear;
+}
+.view-first a.info{
+    opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+/*And now comes the heart of our effect. When you move the mouse over the image, we can use the delay property to emulate simple animations. The transition-delay that we use in the hover class can be altered, to be differnt than the one in the normal class. In this example we did not use any delay in the normal class; but we added a delay on hover, which will make the transition start a bit later. Moving the mouse out, the default value of 0s will apply and the “reverse” will be quicker.*/
+.view-first:hover img { 
+  transform: scale(1.1);
+} 
+.view-first:hover .mask { 
+  opacity: 1;
+}
+.view-first:hover h2,
+.view-first:hover p,
+.view-first:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.view-first:hover p {
+    transition-delay: 0.1s;
+}
+.view-first:hover a.info {
+    transition-delay: 0.2s;
+}
+/*Use this class when you want your content to be hidden*/
+.BeforeScroll
+{
+  height: 100px; /*Whatever you want*/
+  width: 100%; /*Whatever you want*/
+  .
+
+  display: none;
+}
+
+
+/*Use this class when you want your content to be shown after some scroll*/
+.AfterScroll
+{
+  height: 100px; /*Whatever you want*/
+  width: 100%; /*Whatever you want*/
+  
+  
+  display: block;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<link rel='stylesheet prefetch' href='http:////netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+
+</head>
+<body>
+
+<div class="bgimg-1">
+  
+  <div class="caption">
+    <span class="border animated zoomIn">William Pierce</span>
+    
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;text-align: justify;">
+  <h3 style="text-align:center;">Projects</h3>
+  <div class="view view-first">  
+     <img src="photos/pokematch.png" />  
+     <div class="mask">  
+     <h2>Pokematch</h2>  
+     <p>Web App that scrapes hundreds of photos to use for matching game</p>  
+         <a href="https://github.com/WorldPierce/Pokememory" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div> 
+  <div class="view view-first">  
+     <img src="photos/image1.png" />  
+     <div class="mask">  
+     <h2>Weather API</h2>  
+     <p>Gets local weather and displays image for daily forecast</p>  
+         <a href="https://codepen.io/worldpierce/pen/gROrrm" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div>
+  
+  <div class="view view-first">  
+     <img src="photos/ign.PNG" />  
+     <div class="mask">  
+     <h2>IGN API</h2>  
+     <p>Created for viewing all recent IGN articles</p>  
+         <a href="#" class="info" target="_blank">Read More</a>  
+     </div>  
+  </div> 
+  <div class="view view-first">  
+     <img src="photos/energyflo.png" />  
+     <div class="mask">  
+     <h2>Energy Flo</h2>  
+     <p>Android App for logging energy levels</p>  
+         <a href="https://github.com/EnergyFlo/EnergyFlo" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div>
+  
+  <div class="view view-first">  
+     <img src="photos/nmg.png" />  
+     <div class="mask">  
+     <h2>IT Master Database</h2>  
+     <p>C# code written for internship at NMG Aerospace. (.NET and SQL)</p>  
+         <a href="https://github.com/WorldPierce/ITMaster" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div> 
+  <div class="view view-first">  
+     <img src="photos/insta.png" />  
+     <div class="mask">  
+     <h2>Instagrab</h2>  
+     <p>Final project that used Instagram API for search hashtags and storing data in SQL</p>  
+         <a href="https://github.com/WorldPierce/InstaSearch" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div> 
+  <div class="view view-first">  
+     <img src="photos/calc.png" />  
+     <div class="mask">  
+     <h2>freeCodeCamp Calculator</h2>  
+     <p>Calculator built as part of the freeCodeCamp curriculum</p>  
+         <a href="https://codepen.io/worldpierce/pen/jwGyrw?editors=0011" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div>
+  <div class="view view-first">  
+     <img src="photos/image2.png" />  
+     <div class="mask">  
+     <h2>Wikipedia API</h2>  
+     <p>Searches wikipedia for relavent articles based on what you type</p>  
+         <a href="https://codepen.io/worldpierce/pen/Vmmbqo" class="info" target="_blank">View Code</a>  
+     </div>  
+  </div>
+  <div class="center">    
+    <p>CIS Graduate - <strong>Summa Cum Laude</strong></p>
+    <p>Charleston, WV</p>
+
+    <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a>
+  </div>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Please Add Me On Social Media!</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 44%;text-align: justify;">
+    
+      <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+        <li> <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a></li>  
+        <li> <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li> <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+
+    </ul>
+
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #000;">Or Contact Me Through Email!</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:30px 80px;">
+    <div class="container">
+    <h2>Wffpierce@gmail.com</h2>
+        <!-- <form>
+          <div class="form-group">
+            <label for="name">Name</label><i class="fa fa-user fa-fw"></i>
+
+            <input type="name" class="form-control" id="name" placeholder="Enter Name">
+
+            <label for="exampleInputEmail1">Email</label>
+            <i class="fa fa-envelope-o fa-fw"></i><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+
+            <!-- <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" placeholder="Enter Phone Number"> -->
+
+           <!--  <label for="Textarea">Message</label>
+            <textarea class="form-control" id="Textarea" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form> -->
+    </div>  
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    
+    <span class="border animated zoomIn">Thanks for checking out my page!</span>
+    
+  
+  </div>
+</div>
+
+</body>
+
+</html>
