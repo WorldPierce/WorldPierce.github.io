@@ -6,6 +6,7 @@
 <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
 <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <style>
 body, html, form {
@@ -270,8 +271,83 @@ h3 {
         background-attachment: scroll;
     }
 }
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
 </style>
-<!-- <link rel='stylesheet prefetch' href='http:////netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'> -->
+<script>
+
+  (function($) {
+
+  /**
+   * Copyright 2012, Digital Fusion
+   * Licensed under the MIT license.
+   * http://teamdf.com/jquery-plugins/license/
+   *
+   * @author Sam Sehnert
+   * @desc A small plugin that checks whether elements are within
+   *     the user visible viewport of a web browser.
+   *     only accounts for vertical position, not horizontal.
+   */
+
+  $.fn.visible = function(partial) {
+    
+      var $t            = $(this),
+          $w            = $(window),
+          viewTop       = $w.scrollTop(),
+          viewBottom    = viewTop + $w.height(),
+          _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+    
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+    
+})(jQuery);
+
+$(window).scroll(function(event) {
+  
+  $(".module").each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in"); 
+    } 
+  });
+  
+});
+var win = $(window);
+var allMods = $(".module");
+
+// Already visible modules
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible"); 
+  } 
+});
+
+win.scroll(function(event) {
+  
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in"); 
+    } 
+  });
+  
+});
+
+</script>
 
 </head>
 <body>
@@ -279,14 +355,14 @@ h3 {
 <div class="bgimg-1">
   
   <div class="caption">
-    <span class="border animated zoomIn">William Pierce</span>
+    <span class="border animated zoomIn module">William Pierce</span>
     
   </div>
 </div>
 
 <div style="color: #777;background-color:white;text-align:center;text-align: justify;">
   <h3 style="text-align:center;">Projects</h3>
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/pokematch.png" />  
      <div class="mask">  
      <h2>Pokematch</h2>  
@@ -294,7 +370,7 @@ h3 {
          <a href="https://github.com/WorldPierce/Pokememory" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/image1.png" />  
      <div class="mask">  
      <h2>Weather API</h2>  
@@ -303,7 +379,7 @@ h3 {
      </div>  
   </div>
   
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/ign.png" />  
      <div class="mask">  
      <h2>IGN API</h2>  
@@ -311,7 +387,7 @@ h3 {
          <a href="https://github.com/WorldPierce/IGN_API" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/energyflo.png" />  
      <div class="mask">  
      <h2>Energy Flo</h2>  
@@ -320,7 +396,7 @@ h3 {
      </div>  
   </div>
   
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/nmg.png" />  
      <div class="mask">  
      <h2>IT Master Database</h2>  
@@ -328,7 +404,7 @@ h3 {
          <a href="https://github.com/WorldPierce/ITMaster" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/insta.png" />  
      <div class="mask">  
      <h2>Instagrab</h2>  
@@ -336,7 +412,7 @@ h3 {
          <a href="https://github.com/WorldPierce/InstaSearch" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/calc.png" />  
      <div class="mask">  
      <h2>freeCodeCamp Calculator</h2>  
@@ -344,7 +420,7 @@ h3 {
          <a href="https://codepen.io/worldpierce/pen/jwGyrw?editors=0011" class="info" target="_blank">View Code</a>  
      </div>  
   </div>
-  <div class="view view-first">  
+  <div class="view view-first module">  
      <img src="photos/image2.png" />  
      <div class="mask">  
      <h2>Wikipedia API</h2>  
@@ -353,10 +429,10 @@ h3 {
      </div>  
   </div>
   <div class="center">
-    <p>About me</p>    
-    <p>Cleveland State University - CIS Graduate - <strong>Summa Cum Laude</strong></p>
-    <p>Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
-    <p>Currently living in Charleston, WV</p>
+    <p class="module">About me</p>    
+    <p class="module">Cleveland State University - CIS Graduate - <strong>Summa Cum Laude</strong></p>
+    <p class="module">Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
+    <p class="module">Currently living in Charleston, WV</p>
 
     <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a>
   </div>
@@ -370,7 +446,7 @@ h3 {
 
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 44%;text-align: justify;">
-          <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+          <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline module">
 
         <li> <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a></li>  
         <li> <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -390,8 +466,8 @@ h3 {
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:30px 80px;">
     <div class="container">
-    <h1>Contact me through email:<h1>
-    <h2>Wffpierce@gmail.com</h2>
+    <h1 class="module">Contact me through email:<h1>
+    <h2 class="module">Wffpierce@gmail.com</h2>
    
     </div>  
   </div>
@@ -400,7 +476,7 @@ h3 {
 <div class="bgimg-1">
   <div class="caption">
     
-    <span class="border animated zoomIn">Thanks for checking out my page!</span>
+    <span class="border animated zoomIn module">Thanks for checking out my page!</span>
     
   
   </div>
