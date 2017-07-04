@@ -16,15 +16,19 @@ function setTiles(){
     $.getJSON( url, function(data){
         //console.log(data.query.results.result);
         var str = data.query.results.result.split('</a>');
-        console.log(str[847]);
+        //console.log(str[847]);
         str[846] = null;
         //str[843] = null;
         var i;
         $.each(str, function(){ 
-        console.log(this.toString());
+        //console.log(this.toString());
         var index = this.toString().indexOf('src=');
         var pic = this.toString().substring(index+5, index+48);
-        console.log(pic);  
+        if(pic.charAt(pic.length -1) != 'g'){
+            pic = pic + 'g';
+            //console.log("good save");
+        }
+        //console.log(pic);  
                 //onsole.log(this.img.src);
                 pokemonLinks.push("https:" + pic);
                     // if(i<50){
@@ -182,9 +186,9 @@ $(document).ready(function(){
         //console.log(this.innerHTML);
         //attempt at animation
         //myMove();
-        if(player1 == null){
-           $("#login").modal(); 
-        }
+        // if(player1 == null){
+        //    $("#login").modal(); 
+        // }
         
         pokemonLinks = [];
         currGameLinks = [];
@@ -210,9 +214,9 @@ $(document).ready(function(){
     })
     $('#newGame2').on('click',function(){
         //console.log(this.innerHTML);
-        if(player1 == null){
-           $("#login").modal(); 
-        }
+        // if(player1 == null){
+        //    $("#login").modal(); 
+        // }
         pokemonLinks = [];
         currGameLinks = [];
         setTiles();
