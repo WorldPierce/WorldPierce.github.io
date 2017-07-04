@@ -1,6 +1,6 @@
       //articles
       $.ajax({
-      url: 'http://ign-apis.herokuapp.com/articles?startIndex=0\\u0026count=10',
+      url: 'https://ign-apis.herokuapp.com/articles?startIndex=0\\u0026count=10',
       dataType: 'jsonp', //allows to change domain
       type: 'GET',
       
@@ -34,7 +34,7 @@
     
     $.ajax({
 
-      url: 'http://ign-apis.herokuapp.com/videos?startIndex=0\\u0026count=10',
+      url: 'https://ign-apis.herokuapp.com/videos?startIndex=0\\u0026count=10',
       dataType: 'jsonp', //allows to change domain
       type: 'GET',
       
