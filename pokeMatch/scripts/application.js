@@ -1,5 +1,5 @@
 //get all pokemon sprites, pick 24 randomly, add 2 each to array of strings, go to each td id and randomly pick img from string and set as name property
-var url='http://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url=\'http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number\' and xpath=\'//tr/td[position()mod 4 = 3]/a\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+var url='https://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url=\'http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number\' and xpath=\'//tr/td[position()mod 4 = 3]/a\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
 var pokemonLinks = [];
 var currGameLinks = [];
 var firstClicked = null;
