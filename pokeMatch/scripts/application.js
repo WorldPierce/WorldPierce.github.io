@@ -17,18 +17,19 @@ function setTiles(){
         //console.log(data.query.results.result);
         var str = data.query.results.result.split('</a>');
         //console.log(str[847]);
-        str[846] = null;
-        //str[843] = null;
+        //str[846] = null;
+        //str[845] = null;
+        str.splice(846, 1);
         var i;
         $.each(str, function(){ 
         //console.log(this.toString());
         var index = this.toString().indexOf('src=');
         var pic = this.toString().substring(index+5, index+48);
-        if(pic.charAt(pic.length -1) != 'g'){
+        if(pic.charAt(pic.length - 1) != 'g'){
             pic = pic + 'g';
             //console.log("good save");
         }
-        //console.log(pic);  
+        console.log(pic);  
                 //onsole.log(this.img.src);
                 pokemonLinks.push("https:" + pic);
                     // if(i<50){
