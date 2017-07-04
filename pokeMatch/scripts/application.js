@@ -7,7 +7,7 @@ var secondClicked = null;
 var turn;
 var player1 = null;
 var player2 = null;
-var pokeball = "PokeMemory/p1.jpg";
+var pokeball = "PokeMemory/p01.jpg";
 var matched = [];
 var vm;
 
