@@ -6,7 +6,7 @@
 <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
 <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <style>
 body, html, form {
@@ -34,13 +34,14 @@ body, html, form {
 }
 
 .bgimg-2 {
-  background-image: url("photos/img_parallax2.jpg");
+  background-image: url("photos/img.jpg");
+  /*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
   min-height: 300px;
 }
 
 .bgimg-3 {
   background-image: url("photos/img_parallax3.jpg");
-  min-height: 300px;
+  min-height: 350px;
 }
 
 .caption {
@@ -54,7 +55,17 @@ body, html, form {
   opacity: 0.9;
   filter: alpha(opacity=40);
 }
-
+.caption2 {
+  position: absolute;
+  /*left: 0;*/
+  top: 80%;
+  /*width: 100%;*/
+  text-align: center;
+  color: #000;
+  /*opacity: 0.5;*/
+  opacity: 0.9;
+  filter: alpha(opacity=40);
+}
 
 .caption span.border {
   background-color: #111;
@@ -85,13 +96,13 @@ h3 {
   margin-bottom: 10px;
 }
 .social-icons .fa {
-  font-size: 1.8em;
+  font-size: 1em;
 }
 
 .social-icons .fa {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  /*width: 50px;*/
+  /*height: 50px;*/
+  /*line-height: 50px;*/
   text-align: center;
   color: #FFF;
   color: rgba(255, 255, 255, 0.8);
@@ -140,10 +151,7 @@ h3 {
   transform: scale(1.1) rotate(360deg);
 }
 
-.social-icons .fa-facebook,
-.social-icons .fa-facebook-square {
-  background-color: #3C599F;
-}
+
 .view {
     width: 25%;
     height: 200px;
@@ -282,72 +290,86 @@ h3 {
 @keyframes come-in {
   to { transform: translateY(0); }
 }
+/*.word{
+  position: absolute;
+  opacity: 0;
+}
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}*/
 </style>
-<!-- <script>
+<script>
+// var words = document.getElementsByClassName('word');
+// var wordArray = [];
+// var currentWord = 0;
+// console.log(words);
 
-  (function($) {
+// //words[currentWord].style.opacity = 1;
+// for(var i = 0; i < words.length; i++){
+//   splitLetters(words[i]);
+// }
 
-  /**
-   * Copyright 2012, Digital Fusion
-   * Licensed under the MIT license.
-   * http://teamdf.com/jquery-plugins/license/
-   *
-   * @author Sam Sehnert
-   * @desc A small plugin that checks whether elements are within
-   *     the user visible viewport of a web browser.
-   *     only accounts for vertical position, not horizontal.
-   */
+// function changeWord(){
+//   var cw = wordArray[currentWord];
+//   var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+//   for(var i = 0; i < cw.length; i++){
+//     animateLetterOut(cw, i);
+//   }
+//   for(var i = 0; i < nw.length; i++){
+//     nw[i].className = 'letter behind';
+//     nw[0].parentElement.style.opacity = 1;
+//     animateLetterIn(nw,i);
+//   }
+//   currentWord = (currentWord == wordArray.length-1) ? 0: currentWord+1;
+// }
 
-  $.fn.visible = function(partial) {
-    
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top,
-          _bottom       = _top + $t.height(),
-          compareTop    = partial === true ? _bottom : _top,
-          compareBottom = partial === true ? _top : _bottom;
-    
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+// function animateLetterOut(cw, i){
+//   setTimeout(function(){
+//     cw[i].className = 'letter out';
+//   }, i*80);
+// }
 
-  };
-    
-})(jQuery);
+// function animateLetterIn(nw, i){
+//   setTimeout(function(){
+//     nw[i].className = 'letter out';
+//   }, 340+(i*80));
+// }
 
-$(window).scroll(function(event) {
-  
-  $(".module").each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in"); 
-    } 
-  });
-  
-});
-var win = $(window);
-var allMods = $(".module");
+// function spitLetters(word){
+//   var content = word.innerHTML;
+//   word.innerHTML = '';
+//   var letters = [];
+//   for(var i = 0; i < content.length; i++){
+//     var letter = document.createElement('span');
+//     letter.className = 'letter';
+//     letter.innerHTML = content.charAt(i);
+//     word.appendChild(letter);
+//     letters.push(letter);
+//   }
+//   wordArray.push(letters);
+// }
+// changeWord();
+// setInterval(changeWord, 4000);
 
-// Already visible modules
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible"); 
-  } 
-});
-
-win.scroll(function(event) {
-  
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in"); 
-    } 
-  });
-  
-});
-
-</script> -->
+</script> 
 
 </head>
 <body>
@@ -358,6 +380,7 @@ win.scroll(function(event) {
     <span class="border animated zoomIn ">William Pierce</span>
     
   </div>
+
 </div>
 
 <div style="color: #777;background-color:white;text-align:center;text-align: justify;">
@@ -428,29 +451,44 @@ win.scroll(function(event) {
          <a href="https://codepen.io/worldpierce/pen/Vmmbqo" class="info" target="_blank">View Code</a>  
      </div>  
   </div>
-  <div class="center">
-    <p class="module">About me</p>    
-    <p class="module">Cleveland State University - CIS Graduate - <strong>Summa Cum Laude</strong></p>
-    <p class="module">Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
-    <p class="module">Currently living in Charleston, WV</p>
+  <div class="center text">
+    <!-- <p class="module">About me</p>
+       
+    <p class="word">Cleveland State University - CIS Graduate - <strong>Summa Cum Laude</strong></p>
+    <p class="word">Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
+    <p class="word">Currently living in Charleston, WV</p> -->
+    
 
-    <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a>
+    <a href="" style="color: #fff; text-decoration: none;">_</a>
   </div>
 </div>
 
 <div class="bgimg-2">
-  <div class="caption">
-    <span class="border" style="background-color:transparent;font-size:25px;color: #000;">Social Media!</span>
+  <div class="caption2">
+    <span class="border" style="background-color:transparent;font-size:45px;color: #fff;">About Me</span>
   </div>
 </div>
 
 <div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 44%;text-align: justify;">
-          <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline module">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 40%;text-align: justify;">
+   <div class="center text">
+    
+       
+    <p class="word" style="color: #286639; font-size:16px;">Cleveland State University - <strong>CIS</strong> </p> 
+    <p><strong>Summa Cum Laude</strong></p>
+    <p class="word" style="color: #e8db33;">Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
+    <p class="word">Currently seeking employment in Charleston, WV</p>
+    
+
+    <!-- <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a> -->
+  </div>
+          <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline ">
 
         <li> <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a></li>  
         <li> <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a></li>
         <li> <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+        <li> <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-free-code-camp"></i></a></li> 
+        <li><a href="William_Pierce_Resume.zip" style="color: #fb3f00; text-decoration: none;" download>Download My Resume</a></li>
 
     </ul>
 
@@ -466,20 +504,13 @@ win.scroll(function(event) {
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:30px 80px;">
     <div class="container">
-    <h1 class="module">Contact me through email:<h1>
-    <h2 class="module">Wffpierce@gmail.com</h2>
+    <h1 class="">Contact me through email:<h1>
+    <h2 class="">Wffpierce@gmail.com</h2>
    
     </div>  
   </div>
 </div>
 
-<div class="bgimg-1">
-  <div class="caption">
-    
-    <span class="border animated zoomIn module">Thanks for checking out my page!</span>
-    
-  
-  </div>
 </div>
 
 </body>
