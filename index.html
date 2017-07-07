@@ -19,7 +19,18 @@ body, html, form {
 .center{
   text-align: center;
 }
-
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+h3.color {
+  color: white;
+}
+.bio-border{
+  border-right: solid white 1px; 
+  border-left: solid white 1px;
+  height:360px;
+}
 .bgimg-1, .bgimg-2, .bgimg-3 {
   position: relative;
   opacity: 0.65;
@@ -129,7 +140,10 @@ h3 {
 
 .fa:hover{
   /*font-size: 1.8em;*/
-  color: #282E34;
+  color: #FFF;
+}
+.fa.gh2:hover{
+  color:#000;
 }
 
 .social-icons .fa:hover,
@@ -164,13 +178,13 @@ h3 {
     height: 200px;
     /*margin: 10px;*/
     float: left;
-    border: 0px solid #fff;
+    border: 1px solid #000;
     overflow: hidden;
     position: relative;
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url(../images/bgimg.jpg) no-repeat center center
+    /*background: #fff url(../images/bgimg.jpg) no-repeat center center*/
 }
 .view .mask, .view .content {
     width: 100%;
@@ -384,7 +398,9 @@ h3 {
 <div class="bgimg-1">
   
   <div class="caption">
-    <span class="border animated zoomIn ">William Pierce</span>
+    <span class="border animated zoomIn ">William Pierce <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a></span>
     
   </div>
 
@@ -396,8 +412,9 @@ h3 {
      <img src="photos/pokematch.png" />  
      <div class="mask">  
      <h2>Pokematch</h2>  
-     <p>Web App that scrapes hundreds of photos to use for matching game</p>  
-         <a href="pokeMatch/index.html" class="info" target="_blank">Play Here!</a>  
+     <p>Built with Jquery, Ajax, PHP, Vue.js, and YQL - Scrapes over 800 images for matching game.</p>  
+         <a href="pokeMatch/index.html" class="info" target="_blank">Play Here</a>
+         <a href="https://github.com/WorldPierce/Pokememory" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
   <div class="view view-first">  
@@ -413,15 +430,16 @@ h3 {
      <img src="photos/ign.png" />  
      <div class="mask">  
      <h2>IGN API</h2>  
-     <p>Created for viewing all recent IGN articles</p>  
-         <a href="ignApp/index.html" class="info" target="_blank">View App</a>  
+     <p>Ajax and IGN API - Grabs Articles and photos and organizes in a drop down table</p>  
+         <a href="ignApp/index.html" class="info" target="_blank">View App</a>
+         <a href="https://github.com/WorldPierce/IGN_API" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
   <div class="view view-first">  
      <img src="photos/energyflo.png" />  
      <div class="mask">  
      <h2>Energy Flo</h2>  
-     <p>Android App for logging energy levels</p>  
+     <p>Built in Android Studio - Android App for logging energy levels</p>  
          <a href="https://github.com/EnergyFlo/EnergyFlo" class="info" target="_blank">View Code</a>  
      </div>  
   </div>
@@ -430,7 +448,7 @@ h3 {
      <img src="photos/nmg.png" />  
      <div class="mask">  
      <h2>IT Master Database</h2>  
-     <p>C# code written for internship at NMG Aerospace. (.NET and SQL)</p>  
+     <p>.NET/C# and SQL code written in Visual Studio for my internship at NMG Aerospace</p>  
          <a href="https://github.com/WorldPierce/ITMaster" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
@@ -438,24 +456,24 @@ h3 {
      <img src="photos/insta.png" />  
      <div class="mask">  
      <h2>Instagrab</h2>  
-     <p>Final project that used Instagram API for search hashtags and storing data in SQL</p>  
+     <p>Built with Jquery, Ajax, Javascript, PHP, MAMP, SQL, and Instagrams API - Grabs your photos with related hashtags and stores data</p>  
          <a href="https://github.com/WorldPierce/InstaSearch" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
   <div class="view view-first">  
      <img src="photos/calc.png" />  
      <div class="mask">  
-     <h2>freeCodeCamp Calculator</h2>  
-     <p>Calculator built as part of the freeCodeCamp curriculum</p>  
-         <a href="https://codepen.io/worldpierce/pen/jwGyrw?editors=0011" class="info" target="_blank">View Code</a>  
+      <h2>freeCodeCamp Calculator</h2>  
+      <p>Calculator built as part of the freeCodeCamp curriculum</p>  
+      <a href="https://codepen.io/worldpierce/pen/jwGyrw?editors=0011" class="info" target="_blank">View Code</a>  
      </div>  
   </div>
   <div class="view view-first">  
      <img src="photos/image2.png" />  
      <div class="mask">  
-     <h2>Wikipedia API</h2>  
-     <p>Searches wikipedia for relavent articles based on what you type</p>  
-         <a href="https://codepen.io/worldpierce/pen/Vmmbqo" class="info" target="_blank">View Code</a>  
+      <h2>Wikipedia API</h2>  
+      <p>Ajax, Javascript, built on Codepen - Searches wikipedia for relavent articles based on what you type</p>  
+      <a href="https://codepen.io/worldpierce/pen/Vmmbqo" class="info" target="_blank">View Code</a>  
      </div>  
   </div>
   <div class="center text">
@@ -467,11 +485,8 @@ h3 {
     
 
     <!-- <a href="" style="color: #fff; text-decoration: none;">_</a> -->
-    
-    <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a>
-    <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a>
-   
+    Check out all these projects and more on my Github ->
+    <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github gh2"></i></a>
   </div>
 </div>
 
@@ -484,37 +499,37 @@ h3 {
 <div style="position:relative; background-color:#282E34; font-family: Trebuchet MS;" class="row">
 
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 5%;text-align: justify;">
-  <div class="center col-sm-4">
-  <h2>Hi, I'm Billy!</h2>
-  <div style="border: solid white 1px; padding: 3px">
-    <p>Ohio born and raised now currently residing in Charleston, West Virginia. I received my Bachelors Degree in <strong style="color: #62db62; font-family:Consolas; background-color: black; padding: 2px;"> Computer Science</strong> from </br><strong style="color: #286639; background-color: white; padding: 2px;">CLEVELAND STATE UNIVERSITY</strong></br> in 2017. I am a lover of anime, cats that I am allergic to, computers, music, my girlfriend, and just about every person I meet! I love ya!</p>
+    <div class="center col-sm-4 bio-border" >
+      <h3 class="color">Hi, I'm Billy!</h3>
+      <div>
+        <p>Ohio born and raised now currently residing in Charleston, West Virginia. I received my Bachelors Degree in </br><strong style="color: #62db62; font-family:Consolas; background-color: black; padding: 2px;"> Computer Science</strong></br> from </br><strong style="color: #286639; background-color: white; padding: 2px;">CLEVELAND STATE UNIVERSITY</strong></br> in 2017. I am a lover of anime, cats that I am allergic to, computers, music, my girlfriend, and just about every person I meet! I love ya!</p>
+      </div>
     </div>
-</div>
-   <div class="center text col-sm-4">
-    <h3>Accomplishments</h3>
-    <p class="deg">Graduated <a href="photos/degree.jpg" style="color: #4286f4;" target="_blank"><strong>Summa Cum Laude</strong></a></p>
-    <p class="word" >Winner of the <a href="photos/award.jpg" style="color: #e8db33;" target="_blank"><strong >2017 Outstanding Computer Science Academic Achievement Award</strong>
-    </a></p>
-    <p>Completed:</p>
-    <div style="border: dashed white 1px">
-    <p>NMG Aerospace <a href="https://github.com/WorldPierce/ITMaster" style="color: #e56424;" target="_blank"><strong>.Net/C# and SQL Internship</strong></a></p>
-    <p>freeCodeCamp's <a href="https://www.freecodecamp.com/worldpierce/front-end-certification" style="color: #32993c;" target="_blank"><strong >Front End Development Program</strong></a></p>
-    </div>
-    <p class="word">Currently seeking employment in Charleston, WV</p>
-    <a href="resume.zip" style="color: #fb3f00;" download>Download My Resume</a>
+    <div class="center text col-sm-4">
+      <h3 class="color">Accomplishments</h3>
+      <p class="deg">Graduated <a href="photos/degree.jpg" style="color: #98b7f9;" target="_blank"><strong>Summa Cum Laude</strong></a></p>
+      <p class="word" >Winner of the <a href="photos/award.jpg" style="color: #98b7f9;" target="_blank"><strong >2017 Outstanding Computer Science Academic Achievement Award</strong>
+      </a></p>
+      <p>Completed:</p>
+      <div style="border: dashed white 1px">
+        <p>NMG Aerospace <a href="https://github.com/WorldPierce/ITMaster" style="color: #c6c379;" target="_blank"><strong>.Net/C# and SQL Internship</strong></a></p>
+        <p>freeCodeCamp's <a href="https://www.freecodecamp.com/worldpierce/front-end-certification" style="color: #c6c379;" target="_blank"><strong >Front End Development Program</strong></a></p>
+      </div>
+      <p class="word">Currently seeking employment in Charleston, WV</p>
+      <a href="resume.zip" style="color: #fb3f00; border: dashed white 3px;padding: 3px" download>Download My Resume</a>
 
     <!-- <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a> -->
+    </div>
+
+    <div class="center text col-sm-4 bio-border" >
+      <img class="deg" src="photos/degree.jpg" style="display: none">
+      <h3 class="color">Thank you</h3>
+      <p>for taking the time out of your day to get to know me! My email is listed if you just scroll to the bottom, I hope to hear from you!</p>
+      <img src="photos/me.jpg" style="width: 200px; border-radius: 50%">
+
+    </div>
+
   </div>
-
-  <div class="center text col-sm-4">
-  <img class="deg" src="photos/degree.jpg" style="display: none">
-  <h2 style="font-family: cursive;">Thank you</h2>
-  <p>for taking the time out of your day to get to know me! My email is listed if you just scroll to the bottom, I hope to hear from you!</p>
-  <img src="photos/me.jpg" style="width: 200px; border-radius: 50%">
-
-  </div>
-
-</div>
 </div>
 
 
@@ -528,8 +543,9 @@ h3 {
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:30px 80px;">
     <div class="container">
-    <h1 class="">Contact me through email:<h1>
+    <h1 class="">Contact Me:<h1>
     <h2 class="">Wffpierce@gmail.com</h2>
+    <h2 class="">(330)-703-2939</h2>
    
     </div>  
   </div>
