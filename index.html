@@ -82,11 +82,12 @@ h3.color {
 .caption span.border {
   background-color: #111;
   color: #fff;
-  padding: 40px;
+  padding: 0px;
   font-size: 35px;
   letter-spacing: 5px;
   width: 100%;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  display: block;
   /*opacity: 0.5;*/
 }
 
@@ -96,6 +97,7 @@ h3 {
   font: 20px "Lato", sans-serif;
   color: #111;
 }
+
 .list-unstyled {
   padding-left: 0;
   list-style: none;
@@ -110,7 +112,6 @@ h3 {
 .fa {
   font-size: 1em;
 }
-
 
 .social-icons .fa {
   /*width: 50px;*/
@@ -278,8 +279,6 @@ h3 {
 {
   height: 100px; /*Whatever you want*/
   width: 100%; /*Whatever you want*/
-  .
-
   display: none;
 }
 
@@ -289,8 +288,6 @@ h3 {
 {
   height: 100px; /*Whatever you want*/
   width: 100%; /*Whatever you want*/
-  
-  
   display: block;
 }
 
@@ -302,10 +299,10 @@ h3 {
 }
 .come-in {
   transform: translateY(150px);
-  animation: come-in 0.8s ease forwards;
+  animation: come-in 0.6s ease forwards;
 }
 .come-in:nth-child(odd) {
-  animation-duration: 0.6s; /* So they look staggered */
+  animation-duration: 0.4s; /* So they look staggered */
 }
 
 @keyframes come-in {
@@ -398,7 +395,8 @@ h3 {
 <div class="bgimg-1">
   
   <div class="caption">
-    <span class="border animated zoomIn ">William Pierce <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a>
+    <span class="border animated zoomIn">William Pierce <br>
+    <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a>
     <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a>
     <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a></span>
     
@@ -485,7 +483,7 @@ h3 {
     
 
     <!-- <a href="" style="color: #fff; text-decoration: none;">_</a> -->
-    Check out all these projects and more on my Github ->
+    Check out all these projects and more on my Github →
     <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github gh2"></i></a>
   </div>
 </div>
@@ -516,7 +514,7 @@ h3 {
         <p>freeCodeCamp's <a href="https://www.freecodecamp.com/worldpierce/front-end-certification" style="color: #c6c379;" target="_blank"><strong >Front End Development Program</strong></a></p>
       </div>
       <p class="word">Currently seeking employment in Charleston, WV</p>
-      <a href="resume.zip" style="color: #fb3f00; border: dashed white 3px;padding: 3px" download>Download My Resume</a>
+      <a href="resume.zip" style="color: #fb3f00; padding: 3px" download>Download My Resume</a>
 
     <!-- <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a> -->
     </div>
