@@ -33,6 +33,29 @@ h3.color {
   border-right: solid white 1px; 
   border-left: solid white 1px;
   height:360px;
+  
+  font-size: 15px;
+}
+.name-border-first{
+   /*position: absolute;*/
+  border-left: solid white 1px;
+  
+  /*height:360px;*/
+  z-index: 6;
+  font-size: 50px;
+  padding: 8px;
+  display: inline-block;
+}
+.name-border-last{
+   /*position:absolute;*/
+  border-right: solid white 1px;
+  
+  /*height:360px;*/
+  z-index: 0;
+  font-size: 50px;
+  padding: 8px;
+  display: inline-block;
+  /*margin-top: 40px;*/
 }
 .bgimg-1, .bgimg-2, .bgimg-3 {
   position: relative;
@@ -92,6 +115,8 @@ h3.color {
   /*font-weight: bold;*/
   display: block;
   /*opacity: 0.5;*/
+  z-index: 5;
+  position: absolute;
 }
 
 h3 {
@@ -398,18 +423,25 @@ h3 {
 <div class="bgimg-1">
   
   <div class="caption">
-    <span class="border animated zoomIn">William Pierce <br>
-    <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github"></i></a>
-    <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><i class="fa fa-linkedin"></i></a></span>
+    <span class="name-border-first animated fadeInDown">William</span>
+    <span class="border">
+    <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github animated fadeIn"></i></a>
     
+    
+    <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook animated fadeIn"></i></a>
+    
+    
+    <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button"  target="_blank"><i class="fa fa-linkedin animated fadeIn"></i></a>
+    </span>
+
+    <span class="animated fadeInUp name-border-last">Pierce</span>
   </div>
 
 </div>
 
 <div style="color: #777;background-color:white;text-align:center;text-align: justify;">
   <h3 style="text-align:center;">Projects</h3>
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/pokematch.png" />  
      <div class="mask">  
      <h2>Pokematch</h2>  
@@ -418,7 +450,7 @@ h3 {
          <a href="https://github.com/WorldPierce/Pokememory" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/image2.png" />  
      <div class="mask">  
       <h2>Indoor Localization App</h2>  
@@ -426,7 +458,7 @@ h3 {
       <a href="https://github.com/WorldPierce/Indoor-localization-app" class="info" target="_blank">View Code</a>  
      </div>
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/image1.png" />  
      <div class="mask">  
      <h2>Weather API</h2>  
@@ -435,7 +467,7 @@ h3 {
      </div>  
   </div>
   
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/ign.png" />  
      <div class="mask">  
      <h2>IGN API</h2>  
@@ -444,7 +476,7 @@ h3 {
          <a href="https://github.com/WorldPierce/IGN_API" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/energyflo.png" />  
      <div class="mask">  
      <h2>Energy Flo</h2>  
@@ -453,7 +485,7 @@ h3 {
      </div>  
   </div>
   
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/nmg.png" />  
      <div class="mask">  
      <h2>IT Master Database</h2>  
@@ -461,7 +493,7 @@ h3 {
          <a href="https://github.com/WorldPierce/ITMaster" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/insta.png" />  
      <div class="mask">  
      <h2>Instagrab</h2>  
@@ -469,7 +501,7 @@ h3 {
          <a href="https://github.com/WorldPierce/InstaSearch" class="info" target="_blank">View Code</a>  
      </div>  
   </div> 
-  <div class="view view-first">  
+  <div class="view view-first wow fadeInUp">  
      <img src="photos/calc.png" />  
      <div class="mask">  
       <h2>freeCodeCamp Calculator</h2>  
@@ -494,21 +526,21 @@ h3 {
 </div>
 
 <div class="bgimg-2">
-  <div class="caption2">
-    <span class="border" style="background-color:transparent;font-size:45px;color: #fff;">About Me</span>
+  <div class="caption2 wow bounceInLeft">
+    <span class="border " style="background-color:transparent;font-size:45px;color: #fff;">About Me</span>
   </div>
 </div>
 
 <div style="position:relative; background-color:#282E34; font-family: Trebuchet MS;" class="row">
 
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:1px 5%;text-align: justify;">
-    <div class="center col-sm-4 bio-border" >
+    <div class="center col-sm-4 bio-border wow slideInLeft" >
       <h3 class="color">Hi, I'm Billy!</h3>
-      <div>
+      <div class="">
         <p>Ohio born and raised now currently residing in Charleston, West Virginia. I received my Bachelors Degree in </br><strong style="color: #62db62; font-family:Consolas;"> Computer Science</strong></br> from </br><strong style="color: #286639; background-color: white; padding: 2px;">CLEVELAND STATE UNIVERSITY</strong></br> in 2017. I enjoy meeting new people, anime, reading, learning, and spending time with my girlfriend. Always trying to improve my coding skills by doing online courses!</p>
       </div>
     </div>
-    <div class="center text col-sm-4">
+    <div class="center text col-sm-4 wow fadeInUp">
       <h3 class="color">Accomplishments</h3>
       <p class="deg">Graduated <a href="photos/degree.jpg" style="color: #98b7f9;" target="_blank"><strong>Summa Cum Laude</strong></a></p>
       <p class="word" >Winner of the <a href="photos/award.jpg" style="color: #98b7f9;" target="_blank"><strong >2017 Outstanding Computer Science Academic Achievement Award</strong>
@@ -524,7 +556,7 @@ h3 {
     <!-- <a href="William_Pierce_Resume.zip" download>Click Here To Download My Resume</a> -->
     </div>
 
-    <div class="center text col-sm-4 bio-border" >
+    <div class="center text col-sm-4 bio-border wow slideInRight" >
       <img class="deg" src="photos/degree.jpg" style="display: none">
       <h3 class="color">Thank you</h3>
       <p>for taking the time out of your day to get to know me! My email is listed if you just scroll to the bottom, I hope to hear from you!</p>
@@ -555,6 +587,10 @@ h3 {
 </div>
 
 </div>
+<script src="dist/wow.js"></script>
+<script>
+  new WOW().init();
+</script>
 
 </body>
 
