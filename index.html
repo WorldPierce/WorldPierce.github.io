@@ -3,8 +3,6 @@
 <head>
 <title>William Pierce</title>
 <link rel="stylesheet" href="css/animate.css">
-<!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
-<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -32,8 +30,7 @@ h3.color {
 .bio-border{
   border-right: solid white 1px; 
   border-left: solid white 1px;
-  height:360px;
-  
+  height:405px;
   font-size: 15px;
 }
 .name-border-first{
@@ -336,86 +333,7 @@ h3 {
 @keyframes come-in {
   to { transform: translateY(0); }
 }
-/*.word{
-  position: absolute;
-  opacity: 0;
-}
-.letter {
-  display: inline-block;
-  position: relative;
-  float: left;
-  transform: translateZ(25px);
-  transform-origin: 50% 50% 25px;
-}
-
-.letter.out {
-  transform: rotateX(90deg);
-  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.letter.behind {
-  transform: rotateX(-90deg);
-}
-
-.letter.in {
-  transform: rotateX(0deg);
-  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}*/
 </style>
-<script>
-// var words = document.getElementsByClassName('word');
-// var wordArray = [];
-// var currentWord = 0;
-// console.log(words);
-
-// //words[currentWord].style.opacity = 1;
-// for(var i = 0; i < words.length; i++){
-//   splitLetters(words[i]);
-// }
-
-// function changeWord(){
-//   var cw = wordArray[currentWord];
-//   var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
-//   for(var i = 0; i < cw.length; i++){
-//     animateLetterOut(cw, i);
-//   }
-//   for(var i = 0; i < nw.length; i++){
-//     nw[i].className = 'letter behind';
-//     nw[0].parentElement.style.opacity = 1;
-//     animateLetterIn(nw,i);
-//   }
-//   currentWord = (currentWord == wordArray.length-1) ? 0: currentWord+1;
-// }
-
-// function animateLetterOut(cw, i){
-//   setTimeout(function(){
-//     cw[i].className = 'letter out';
-//   }, i*80);
-// }
-
-// function animateLetterIn(nw, i){
-//   setTimeout(function(){
-//     nw[i].className = 'letter out';
-//   }, 340+(i*80));
-// }
-
-// function spitLetters(word){
-//   var content = word.innerHTML;
-//   word.innerHTML = '';
-//   var letters = [];
-//   for(var i = 0; i < content.length; i++){
-//     var letter = document.createElement('span');
-//     letter.className = 'letter';
-//     letter.innerHTML = content.charAt(i);
-//     word.appendChild(letter);
-//     letters.push(letter);
-//   }
-//   wordArray.push(letters);
-// }
-// changeWord();
-// setInterval(changeWord, 4000);
-
-</script> 
 
 </head>
 <body>
@@ -512,14 +430,6 @@ h3 {
    
   
   <div class="center text">
-    <!-- <p class="module">About me</p>
-       
-    <p class="word">Cleveland State University - CIS Graduate - <strong>Summa Cum Laude</strong></p>
-    <p class="word">Winner of the 2017 Outstanding Acedeamic Achievement in Computer Science Award</p>
-    <p class="word">Currently living in Charleston, WV</p> -->
-    
-
-    <!-- <a href="" style="color: #fff; text-decoration: none;">_</a> -->
     Check out all these projects and more on my Github →
     <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github gh2 wow flash"></i></a>
   </div>
@@ -549,6 +459,7 @@ h3 {
       <div style="border: dashed white 1px">
         <p>NMG Aerospace <a href="https://github.com/WorldPierce/ITMaster" style="color: #c6c379;" target="_blank"><strong>.Net/C# and SQL Internship</strong></a></p>
         <p>freeCodeCamp's <a href="https://www.freecodecamp.com/worldpierce/front-end-certification" style="color: #c6c379;" target="_blank"><strong >Front End Development Program</strong></a></p>
+        <p>Udemy's <a href="photos/automatePythonCert.jpg" style="color: #c6c379;" target="_blank"><strong >Automate the Boring Stuff with Python Programming online course</strong></a></p>
       </div>
       <p class="word">Currently seeking employment in Charleston, WV</p>
       <a href="WilliamPierceResume.pdf" style="color: #fb3f00; padding: 3px" download>Download My Resume</a>
