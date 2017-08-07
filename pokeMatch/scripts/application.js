@@ -14,7 +14,7 @@ var vm;
 function setTiles(){
     //short hand ajax call
     $.getJSON( url, function(data){
-        //console.log(data.query.results.result);
+        console.log(data.query.results.result);
         var str = data.query.results.result.split('</a>');
         //console.log(str[847]);
         //str[846] = null;
