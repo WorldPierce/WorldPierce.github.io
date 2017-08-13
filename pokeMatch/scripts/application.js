@@ -10,7 +10,7 @@ var player2 = null;
 var pokeball = "PokeMemory/p01.jpg";
 var matched = [];
 var vm;
-var url = "/pokeMatch/";
+var url = "https://github.com/WorldPierce/WorldPierce.github.io/tree/master/pokeMatch/pokemon";
 
 function setTiles(){
     //short hand ajax call
