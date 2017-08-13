@@ -1,5 +1,5 @@
 //get all pokemon sprites, pick 24 randomly, add 2 each to array of strings, go to each td id and randomly pick img from string and set as name property
-var url='https://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url=\'http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number\' and xpath=\'//tr/td[position()mod 4 = 3]/a\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
+//var url='https://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url=\'http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number\' and xpath=\'//tr/td[position()mod 4 = 3]/a\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
 var pokemonLinks = [];
 var currGameLinks = [];
 var firstClicked = null;
@@ -10,28 +10,29 @@ var player2 = null;
 var pokeball = "PokeMemory/p01.jpg";
 var matched = [];
 var vm;
+var url = "sprites/sprites/pokemon/";
 
 function setTiles(){
     //short hand ajax call
-    $.getJSON( url, function(data){
-        console.log(data.query.results.result);
-        var str = data.query.results.result.split('</a>');
-        //console.log(str[847]);
-        //str[846] = null;
-        //str[845] = null;
-        str.splice(846, 1);
-        var i;
-        $.each(str, function(){ 
-        //console.log(this.toString());
-        var index = this.toString().indexOf('src=');
-        var pic = this.toString().substring(index+5, index+48);
-        if(pic.charAt(pic.length - 1) != 'g'){
-            pic = pic + 'g';
-            //console.log("good save");
-        }
-        console.log(pic);  
+    //$.getJSON( url, function(data){
+        //console.log(data);
+        // var str = data.query.results.result.split('</a>');
+        // //console.log(str[847]);
+        // //str[846] = null;
+        // //str[845] = null;
+        // str.splice(846, 1);
+        // var i;
+        // $.each(str, function(){ 
+        // //console.log(this.toString());
+        // var index = this.toString().indexOf('src=');
+        // var pic = this.toString().substring(index+5, index+48);
+        // if(pic.charAt(pic.length - 1) != 'g'){
+        //     pic = pic + 'g';
+        //     //console.log("good save");
+        // }
+          
                 //onsole.log(this.img.src);
-                pokemonLinks.push("https:" + pic);
+                //pokemonLinks.push("https:" + pic);
                     // if(i<50){
                     //     //OK this sets id to the img source
                         
@@ -42,28 +43,42 @@ function setTiles(){
                     //     i++;
                     // }
 
-            })
+            //})
+    $.ajax({
+        url : url,
+        success: function (data) {
+            //console.log(data);
+            $(data).find("a").attr("href", function (i, val) {
+                if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                //console.log(val);
+                pokemonLinks.push(url + val);
+                    //$("body").append( "<img src='"+ folder + val +"'>" );
+                } 
+            });
+            for(i = 0; i < 24; i++){
+                var item = pokemonLinks[Math.floor(Math.random()*pokemonLinks.length)];
+                var index = pokemonLinks.indexOf(item);
+                if (index > -1) {
+                    pokemonLinks.splice(index, 1);
+                }
+                currGameLinks.push(item);
+                currGameLinks.push(item);
+            }
+            //set the board
+            //console.log(currGameLinks.length);
+            for(i=1;i<49;i++){
+                var item = currGameLinks[Math.floor(Math.random()*currGameLinks.length)];
+                var index = currGameLinks.indexOf(item);
+                if (index > -1) {
+                    currGameLinks.splice(index, 1);
+                }
+                $('#'+i).attr('name', item);
+            }
+        }
+    });
         //pick random pokemon from list and remove from master list.
-        for(i = 0; i < 24; i++){
-            var item = pokemonLinks[Math.floor(Math.random()*pokemonLinks.length)];
-            var index = pokemonLinks.indexOf(item);
-            if (index > -1) {
-                pokemonLinks.splice(index, 1);
-            }
-            currGameLinks.push(item);
-            currGameLinks.push(item);
-        }
-        //set the board
-        console.log(currGameLinks.length);
-        for(i=1;i<49;i++){
-            var item = currGameLinks[Math.floor(Math.random()*currGameLinks.length)];
-            var index = currGameLinks.indexOf(item);
-            if (index > -1) {
-                currGameLinks.splice(index, 1);
-            }
-            $('#'+i).attr('name', item);
-        }
-    })
+        
+    //})
     
 }
 
@@ -123,7 +138,7 @@ $(document).ready(function(){
         //setting firstClicked equal to tile
         if(firstClicked == null){
             firstClicked = this;
-            console.log($(firstClicked).attr('id'));
+            //console.log($(firstClicked).attr('id'));
         }
         //checking if clicked same tile twice
         else if ($(firstClicked).attr('id') == $(this).attr('id')){
@@ -134,11 +149,11 @@ $(document).ready(function(){
             secondClicked = this;
             //checking if match
             if($(secondClicked).attr('name') == $(firstClicked).attr('name')){
-                console.log("match");
+                //console.log("match");
                 $(".pokedex_body").append("<img src=\""+$(secondClicked).attr('name')+"\"/>");
                 //checking if player one match
                 if(player1.turn){
-                    console.log("player 1 match");
+                    //console.log("player 1 match");
                     $(".player1Catches").append("<img src=\""+$(secondClicked).attr('name')+"\"/>");
                     player1.score++;
                     //check if game over
@@ -146,7 +161,7 @@ $(document).ready(function(){
 
                 }
                 else{
-                    console.log("player 2 match");
+                    //console.log("player 2 match");
                     $(".player2Catches").append("<img src=\""+$(secondClicked).attr('name')+"\"/>");
                     player2.score++;
                     //check if game over
@@ -258,6 +273,12 @@ $(document).ready(function(){
         
         $("#pokeball_select").modal("toggle");
         //document.getElementById("row1").rows[0].innerHTML='<img src="PokeMemory/Pokeball.PNG>"';
+    })
+    $('.pokemon_select').on('click',function(){
+        //console.log(this.id);
+        url = this.id;
+        $("#login").modal("toggle");
+        
     })
 
     function loginPlayer(username,wins){
