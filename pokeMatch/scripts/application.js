@@ -47,7 +47,7 @@ function setTiles(){
     $.ajax({
         url : url,
         success: function (data) {
-            //console.log(data);
+            console.log(data);
             $(data).find("a").attr("href", function (i, val) {
                 if( val.match(/\.(jpe?g|png|gif)$/) ) {
                 //console.log(val);
