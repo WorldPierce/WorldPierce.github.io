@@ -10,7 +10,7 @@ var player2 = null;
 var pokeball = "PokeMemory/p01.jpg";
 var matched = [];
 var vm;
-var api = "https://api.github.com/repos/WorldPierce/WorldPierce.github.io/contents/pokeMatch/"
+var api = "https://api.github.com/repos/WorldPierce/WorldPierce.github.io/contents/pokeMatch/";
 var url = "pokemon/";
 
 function setTiles(){
@@ -52,17 +52,23 @@ function setTiles(){
         url : absUrl,
         method: "GET",
         success: function (data) {
-            console.log(data);
-            if(data.name.match(/\.(jpe?g|png|gif)$/)) {
-                pokemonLinks.push(url + data.name);
-            }
+            // console.log(data);
+            // if(data.name.match(/\.(jpe?g|png|gif)$/)) {
+            //     pokemonLinks.push(url + data.name);
+            // }
+            $.each(data, function(index, element) {
+                //console.log(element.name);
+                if(element.name.match(/\.(jpe?g|png|gif)$/)) {
+                    pokemonLinks.push(url + element.name);
+                }
+            });
             // $(data).find("a").attr("href", function (i, val) {
             //     if( val.match(/\.(jpe?g|png|gif)$/) ) {
             //     //console.log(val);
             //     pokemonLinks.push(url + val);
             //         //$("body").append( "<img src='"+ folder + val +"'>" );
             //     } 
-            });
+            //});
             for(i = 0; i < 24; i++){
                 var item = pokemonLinks[Math.floor(Math.random()*pokemonLinks.length)];
                 var index = pokemonLinks.indexOf(item);
