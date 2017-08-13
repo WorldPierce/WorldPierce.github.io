@@ -10,7 +10,7 @@ var player2 = null;
 var pokeball = "PokeMemory/p01.jpg";
 var matched = [];
 var vm;
-var url = "pokemon/";
+var url = "/";
 
 function setTiles(){
     //short hand ajax call
