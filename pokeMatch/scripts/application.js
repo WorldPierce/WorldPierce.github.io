@@ -45,7 +45,10 @@ function setTiles(){
 
             //})
     $.ajax({
+        async: true,
+        crossDomain: true,
         url : url,
+        method: "GET",
         success: function (data) {
             console.log(data);
             $(data).find("a").attr("href", function (i, val) {
