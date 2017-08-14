@@ -1,7 +1,7 @@
 .square{
     width:70px;
     height:70px;
-    background-size: 65px 65px;
+    background-size: 70px 70px;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -87,10 +87,11 @@ h3 {
 }
 
 img{
-    width:65px;
-    height:65px;
+    width:70px;
+    height:70px;
     border:0;
 }
+
 .wins{
   width:20px;
   height:20px;
@@ -150,7 +151,7 @@ p {
   font-weight: bold;
   color: #fff;
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  padding: 15px 30px;
+  padding: 1px 3px;
   transition: all .5s;
   /*border-radius: 30px;*/
   position: relative; 
@@ -170,7 +171,7 @@ p {
   font-weight: bold;
   color: #fff;
   background: linear-gradient(45deg, rgba(255,155,138,1) 0%, rgba(255,129,112,1) 20%, rgba(255,115,97,1) 31%, rgba(255,193,184,1) 44%, rgba(255,171,160,1) 64%, rgba(255,151,138,1) 83%, rgba(255,115,102,1) 100%);
-  padding: 15px 30px;
+  padding: 1px 5px;
   transition: all .5s;
   /*border-radius: 30px;*/
   position: relative; 
@@ -180,7 +181,7 @@ p {
   font-weight: bold;
   color: #fff;
   background: linear-gradient(135deg, #bfd255 0%,#72aa00 16%,#2c841e 26%,#72aa00 38%,#0f7700 50%,#5fb54c 66%,#6aed00 82%,#9ecb2d 100%);
-  padding: 15px 30px;
+  padding: 1px 5px;
   transition: all .5s;
   /*border-radius: 30px;*/
   position: relative; 
