@@ -43,6 +43,25 @@ h3.color {
   padding: 8px;
   display: inline-block;
 }
+
+.header_nav {
+    width:100%;
+    /*height:40px;*/
+    background-color:#666;
+    position:fixed;
+    top:0px;
+    left:0;
+    z-index: 100;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: right;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.80;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
 .name-border-last{
    /*position:absolute;*/
   border-right: solid white 1px;
@@ -340,12 +359,28 @@ h3 {
 
 </head>
 <body>
+<nav class="navbar navbar-default " style="opacity: 0.9; z-index: 100;">
+
+  <div id="header_nav" class="border container-fluid header_nav">
+  William Pierce
+    <span class="nav navbar-nav">
+        <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github animated fadeIn"></i></a>
+        
+        
+        <a href="https://www.facebook.com/billy.pierce7" target="_blank"><i class="fa fa-facebook animated fadeIn"></i></a>
+        
+        
+        <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button"  target="_blank"><i class="fa fa-linkedin animated fadeIn"></i></a>
+      </span>
+
+  </div>
+</nav>
 
 <div class="bgimg-1">
   
   <div class="caption">
     <span class="name-border-first animated fadeInDown">William</span>
-    <span class="border">
+    <span id="header_nav2" class="border">
     <a href="https://github.com/WorldPierce" target="_blank"><i class="fa fa-github animated fadeIn"></i></a>
     
     
@@ -440,7 +475,7 @@ h3 {
 
 <div class="bgimg-2">
   <div class="caption2 wow bounceInLeft">
-    <span class="border " style="background-color:transparent;font-size:45px;color: #fff;">About Me</span>
+    <span class="border " style="background-color:transparent;font-size:45px;color: #fff; margin: auto;">About Me</span>
   </div>
     <img class="mySlides img-fluid" src="photos/shinji/1.png" style="width:300px">
     <img class="mySlides img-fluid" src="photos/shinji/2.png" style="width:300px">
