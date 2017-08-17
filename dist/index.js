@@ -50,7 +50,7 @@ $(window).scroll(function(){
             $('#header_nav').stop().animate({
                 
             },600);
-            $('.navbar').hide("fast");
+            $('.navbar').hide();
         }  
     }
 });
