@@ -62,6 +62,9 @@ h3.color {
     -khtml-opacity: 0.8;
     opacity: 0.8;
 }
+.navbar{
+  height: 0;
+}
 .name-border-last{
    /*position:absolute;*/
   border-right: solid white 1px;
@@ -356,11 +359,21 @@ h3 {
 @keyframes come-in {
   to { transform: translateY(0); }
 }
+/*remove orignal navbar*/
+.navbar {
+  padding-top:0px !important; 
+  padding-bottom:0px !important;
+  position: relative;
+  min-height: 0px !important;
+  margin-bottom: 0px  !important;
+  border: 0px solid transparent !important;
+}
+.navbar {min-height:0px !important}
 </style>
 
 </head>
 <body>
-<nav class="navbar navbar-default " style="opacity: 0.9; z-index: 100;">
+<nav class="nav navbar" style="opacity: 0.9; z-index: 100;">
 
   <div id="header_nav" class="border container-fluid header_nav">
   William Pierce

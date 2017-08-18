@@ -1,5 +1,5 @@
 var myIndex = 0;
-$('.navbar').hide();
+$('.nav').hide();
 carousel();
 var element_position = $('#header_nav2').offset().top;
 
@@ -27,14 +27,14 @@ $(window).scroll(function(){
         if($('#header_nav').data('size') == 'big')
         {
 
-        	$('.navbar').show();
+        	$('.nav').show();
             $('#header_nav').data('size','small');
             $('#header_nav').addClass('header_nav');
             $('#header_nav').addClass('animated fadeIn');
             $('#header_nav').removeClass('fadeOutUp');
-            $('#header_nav').stop().animate({
+            // $('#header_nav').stop().animate({
                 
-            },600);
+            // },600);
         }
     }
     else
@@ -47,10 +47,10 @@ $(window).scroll(function(){
         	$('#header_nav').removeClass('fadeIn');
         	
             $('#header_nav').data('size','big');
-            $('#header_nav').stop().animate({
+            // $('#header_nav').stop().animate({
                 
-            },600);
-            setTimeout(function(){ $('.navbar').hide("fast");}, 400);
+            // },600);
+            //setTimeout(function(){ $('.nav').hide();}, 600);
             
         }  
     }
