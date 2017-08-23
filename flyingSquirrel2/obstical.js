@@ -6,12 +6,12 @@ function Obstical(maxHoleSize, spd) {
 	this.w = window.innerWidth * .06;
 	//space is space cover with innerheight being the entire space
 	//space = 510 is smallest we want
-	this.space = 505 - maxHoleSize;
+	this.space = window.innerHeight - maxHoleSize;
 	// this.space = (random() * (window.innerHeight - minHoleSize)) + maxHoleSize;
 	//this.space = (random() * (window.innerHeight) + (maxHoleSize - minHoleSize);
 	this.top = random() * (this.space);
 	this.bottom = this.space - this.top;
-	this.speed = 5.0 + spd;
+	this.speed = 6.0 + spd;
 	this.img = loadImage("images/forest1860.png");
 
 	
@@ -21,7 +21,7 @@ function Obstical(maxHoleSize, spd) {
 		//fill(255);
 		// rect(this.x, 0, this.w, this.top);
 		// rect(this.x, window.innerHeight - this.bottom, this.w, this.bottom);
-		//console.log(this.space);
+		//console.log(window.innerHeight);
 		image(this.img, this.x, 0, this.w, this.top);
 		image(this.img, this.x, window.innerHeight - this.bottom, this.w, this.bottom);
 
