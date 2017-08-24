@@ -1,5 +1,5 @@
 function Logo() {
-	this.x = width;
+	this.x = 130;
 	this.speed = 5;
 	this.img = loadImage("images/logo.png");;
 

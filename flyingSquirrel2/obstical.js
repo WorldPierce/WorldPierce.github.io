@@ -13,6 +13,16 @@ function Obstical(maxHoleSize, spd) {
 	this.bottom = this.space - this.top;
 	this.speed = 6.0 + spd;
 	this.img = loadImage("images/forest1860.png");
+	
+
+	this.hits = function(squirrel) {
+		if(squirrel.y < this.top || squirrel.y > height - this.bottom) {
+			if(squirrel.x > this.x && squirrel.x < this.x + this.w) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	
 

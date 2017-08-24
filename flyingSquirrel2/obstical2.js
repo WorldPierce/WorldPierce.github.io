@@ -7,6 +7,7 @@ function Obstical2(pic,spd) {
 	this.h = 75;
 	this.speed;
 	this.img;
+	this.isNut = false;
 
 	switch(pic) {
 		case 0:
@@ -14,23 +15,26 @@ function Obstical2(pic,spd) {
 		case 2:
 			this.h = 40;
 	    	this.w = 40;
-	        this.img = loadImage("images/nuts.png");
+	    	this.isNut = true;
+	        // this.img = loadImage("images/nuts.png");
+	        this.img = loadImage("images/cloud.png");
 	        this.speed = Math.floor((Math.random() * 12) + 8) + spd;
 	        break;
 	    case 3:
 	    case 4:
 	    case 5:
-	    	this.w = window.innerWidth * .1;
-			this.h = window.innerHeight * .2
+	  //   	this.w = window.innerWidth * .1;
+			// this.h = window.innerHeight * .2;
 			this.speed = Math.floor((Math.random() * 12) + 8) + spd;
 	        this.img = loadImage("images/forest2.png");
 	        break;
 	    case 6:
 	    case 7: 
 	    	this.speed = 20;
-	        this.img = loadImage("images/forest3.png");
+	        this.img = loadImage("images/forest2.png");
 	        break;
 	    default:
+	    this.isNut = true;
 	    this.img = loadImage("images/cloud.png");
 	    this.speed = 12 + spd;
 	}
@@ -44,6 +48,16 @@ function Obstical2(pic,spd) {
 		image(this.img, this.x, window.innerHeight - this.bottom, this.w, this.h);
 
 		//setTimeout(function(){ image(this.img, this.x, window.innerHeight + this.bottom, this.w, this.h); }, 1000);
+	}
+
+	this.hits = function(squirrel) {
+		if(squirrel.y > this.middle && squirrel.y < this.middle + this.h) {
+			//console.log(this.x + " " + squirrel.x);
+			if(squirrel.x - 10 > this.x && this.x+this.w  > 250) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	this.show1 = function() {

@@ -5,25 +5,53 @@ var flyingObsticals = [];
 var myRand = 15;
 var song;
 // var maxHoleSize = 0;
-// var minHoleSize = 100.0;
+var minHoleSize = 100.0;
 var logo;
-var maxHoleSize = 200;
+var maxHoleSize = 250;
 var spd = 0.0;
-var doDraw = false;
+var doDraw;
+// var frame = 
 
 
 function preload() {
 	song = loadSound("sounds/Gianni.mp3");
 }
 function setup() {
+	var button = createButton("reset");
+	button.mousePressed(resetSketch);
+	createCanvas(1000, window.innerHeight);
 	song.play();
 	song.setVolume(0.5);
-	song.addCue(1.00, play);
-	squrriel = new Squrriel(); 
+	//song.addCue(0.10, setUpBg);
+	song.addCue(1.00, resetSketch);
 	bg = loadImage("images/background3.png");
 	logo = new Logo();
-    createCanvas(window.innerWidth, window.innerHeight);
-    obsticals.push(new Obstical(maxHoleSize, spd));
+
+
+	//resetSketch();
+}
+
+function setUpBg() {
+	bg = loadImage("images/background3.png");
+	logo = new Logo();
+}
+
+function resetSketch() {
+	doDraw = true;
+	obsticals = [];
+	flyingObsticals = [];
+	myRand = 15;
+
+// var maxHoleSize = 0;
+	minHoleSize = 100.0;
+	//logo;
+	maxHoleSize = 250;
+	spd = 0.0;
+	
+	squrriel = new Squrriel(); 
+	
+    
+    obsticals.push(new Obstical((Math.random() * maxHoleSize) + minHoleSize, spd));
     flyingObsticals.push(new Obstical2(Math.floor((Math.random() * myRand)),spd));
 }
 
@@ -36,7 +64,7 @@ function draw() {
 		squrriel.update();
 		squrriel.show();
 
-		if(frameCount > 120 && frameCount % 60 == 0) {
+		if(frameCount > 100 && frameCount % 60 == 0) {
 			obsticals.push(new Obstical(maxHoleSize, spd));
 			flyingObsticals.push(new Obstical2(Math.floor((Math.random() * myRand)),spd));
 		}
@@ -48,19 +76,39 @@ function draw() {
 			// }
 			obsticals[i].show();
 			obsticals[i].update();
+
+			if(obsticals[i].hits(squrriel)){
+				//console.log("IHT");
+				doDraw = false;
+			}
 			
 			if(obsticals[i].offScreen()) {
 				obsticals.splice(i, 1);
 				if(spd < 12.0) {
 					spd += 0.15;
 				}
-				if(maxHoleSize > 50) {
+				if(maxHoleSize > 0) {
 					maxHoleSize -= 2;
+				}
+				if(minHoleSize > 50) {
+					minHoleSize -= 2;
 				}
 			}
 			if(flyingObsticals[i] != null) {
 				flyingObsticals[i].show1();
 				flyingObsticals[i].update();
+				if(flyingObsticals[i].hits(squrriel)){
+					//console.log("IHT");
+					console.log("hit");
+					if(flyingObsticals[i].isNut) {
+						//flyingObsticals[i].clear();
+
+
+					} else {
+						doDraw = false;
+					}
+					
+				}
 				if(flyingObsticals[i].offScreen()) {
 				flyingObsticals.splice(i,1);
 				if(myRand > 12) {
@@ -86,6 +134,18 @@ function keyPressed() {
 	if(key == ' ') {
 		squrriel.up();
 		//console.log("space");
+	}
+	if(key == 80) {
+		console.log('p');
+		if(song.isPlaying()){
+			song.pause();
+		}
+		else {
+			song.play();
+		}
+	}
+	if(key == 13 && doDraw == false) {
+		doDraw = true;
 	}
 }
 
