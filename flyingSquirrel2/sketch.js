@@ -10,7 +10,7 @@ var logo;
 var maxHoleSize = 250;
 var spd = 0.0;
 var doDraw;
-// var frame = 
+var newGame = true;
 
 
 function preload() {
@@ -37,10 +37,12 @@ function setUpBg() {
 }
 
 function resetSketch() {
+	frameCount = 0;
 	doDraw = true;
-	obsticals = [];
+	obsticals.length = 0;
 	flyingObsticals = [];
 	myRand = 15;
+	newGame = true;
 
 // var maxHoleSize = 0;
 	minHoleSize = 100.0;
@@ -64,7 +66,7 @@ function draw() {
 		squrriel.update();
 		squrriel.show();
 
-		if(frameCount > 100 && frameCount % 60 == 0) {
+		if(!newGame && frameCount % 60 == 0) {
 			obsticals.push(new Obstical(maxHoleSize, spd));
 			flyingObsticals.push(new Obstical2(Math.floor((Math.random() * myRand)),spd));
 		}
@@ -133,6 +135,7 @@ function play() {
 function keyPressed() {
 	if(key == ' ') {
 		squrriel.up();
+		newGame = false;
 		//console.log("space");
 	}
 	if(key == 80) {

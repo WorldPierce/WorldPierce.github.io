@@ -2,8 +2,8 @@ function Obstical(maxHoleSize, spd) {
 	// this.top = random(window.innerHeight/2);
 	// this.bottom = random(window.innerHeight/2);
 	// this. middle = random(window.innerHeight);
-	this.x = window.innerWidth;
-	this.w = window.innerWidth * .06;
+	this.x = width;
+	this.w = window.innerWidth * .04;
 	//space is space cover with innerheight being the entire space
 	//space = 510 is smallest we want
 	this.space = window.innerHeight - maxHoleSize;
@@ -16,7 +16,7 @@ function Obstical(maxHoleSize, spd) {
 	
 
 	this.hits = function(squirrel) {
-		if(squirrel.y < this.top || squirrel.y > height - this.bottom) {
+		if(squirrel.y + 10 < this.top || squirrel.y > height - this.bottom) {
 			if(squirrel.x > this.x && squirrel.x < this.x + this.w) {
 				return true;
 			}
