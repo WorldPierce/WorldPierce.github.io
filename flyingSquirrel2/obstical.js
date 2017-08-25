@@ -6,7 +6,7 @@ function Obstical(maxHoleSize, spd) {
 	this.w = window.innerWidth * .04;
 	//space is space cover with innerheight being the entire space
 	//space = 510 is smallest we want
-	this.space = window.innerHeight - maxHoleSize;
+	this.space = height - maxHoleSize;
 	// this.space = (random() * (window.innerHeight - minHoleSize)) + maxHoleSize;
 	//this.space = (random() * (window.innerHeight) + (maxHoleSize - minHoleSize);
 	this.top = random() * (this.space);
@@ -33,7 +33,7 @@ function Obstical(maxHoleSize, spd) {
 		// rect(this.x, window.innerHeight - this.bottom, this.w, this.bottom);
 		//console.log(window.innerHeight);
 		image(this.img, this.x, 0, this.w, this.top);
-		image(this.img, this.x, window.innerHeight - this.bottom, this.w, this.bottom);
+		image(this.img, this.x, height - this.bottom, this.w, this.bottom);
 
 		//setTimeout(function(){ image(this.img, this.x, window.innerHeight + this.bottom, this.w, this.h); }, 1000);
 	}

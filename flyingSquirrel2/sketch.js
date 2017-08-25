@@ -19,7 +19,7 @@ function preload() {
 function setup() {
 	var button = createButton("reset");
 	button.mousePressed(resetSketch);
-	createCanvas(1000, window.innerHeight);
+	createCanvas(1000, 525);
 	song.play();
 	song.setVolume(0.5);
 	//song.addCue(0.10, setUpBg);
