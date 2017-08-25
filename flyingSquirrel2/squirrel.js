@@ -1,6 +1,7 @@
 function Squrriel() {
 	this.y = window.innerHeight/2;
-	this.x = 250;
+	//this.x = 250;
+	this.x = width * .1;
 	this.gravity = 0.6;
 	this.lift = -15;
 	this.velocity = 0;

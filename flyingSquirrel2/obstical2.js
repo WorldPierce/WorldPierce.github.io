@@ -51,9 +51,9 @@ function Obstical2(pic,spd) {
 	}
 
 	this.hits = function(squirrel) {
-		if(squirrel.y > this.middle && squirrel.y < this.middle + this.h) {
+		if(squirrel.y > this.middle && squirrel.y < this.middle + this.h - 20) {
 			//console.log(this.x + " " + squirrel.x);
-			if(squirrel.x - 10 > this.x && this.x+this.w  > 250) {
+			if(squirrel.x >= this.x) {
 				return true;
 			}
 		}
