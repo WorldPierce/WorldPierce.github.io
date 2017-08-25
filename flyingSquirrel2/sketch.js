@@ -66,8 +66,8 @@ function draw() {
 		squrriel.update();
 		squrriel.show();
 
-		if(!newGame && frameCount % 60 == 0) {
-			obsticals.push(new Obstical(maxHoleSize, spd));
+		if(!newGame && frameCount % 75 == 0) {
+			obsticals.push(new Obstical((Math.random() * maxHoleSize) + minHoleSize, spd));
 			flyingObsticals.push(new Obstical2(Math.floor((Math.random() * myRand)),spd));
 		}
 
@@ -92,7 +92,7 @@ function draw() {
 				if(maxHoleSize > 0) {
 					maxHoleSize -= 2;
 				}
-				if(minHoleSize > 50) {
+				if(minHoleSize > 55) {
 					minHoleSize -= 2;
 				}
 			}
